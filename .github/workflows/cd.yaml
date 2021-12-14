@@ -4,8 +4,8 @@ on:
   push:
   workflow_dispatch:
   schedule:
-      - cron:  '0 7 * * *'
-  workflow_dispatch:
+    - cron:  '0 7 * * *'
+
 jobs:
   upstream_sync_repo:
     name: Sync upstream repository
