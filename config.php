@@ -8,6 +8,9 @@ class Config {
 	public const DAY_ITINERARY_COMMON = 'day_itinerary_common';
 	public const DAY_ITINERARY_WEEK_RETRO = 'day_itinerary_week_retro';
 	public const DAY_ITINERARY_MONTH_OVERVIEW = 'day_itinerary_month_overview';
+	public const FONT_DATA = 'font_array';
+	public const FONT_DEFAULT = 'default_font';
+	public const FONT_DIR = 'font_directory';
 	public const FORMAT = 'format';
 	public const HABITS = 'habits';
 	public const HABITS_TITLE = 'habits_title';
@@ -21,6 +24,7 @@ class Config {
 	public const WEEKLY_RETROSPECTIVE_TITLE = 'weekly_retrospective_title';
 	public const WEEKLY_TODOS = 'weekly_todos';
 	public const SPECIAL_DATES = 'special_dates';
+	public const STYLE_SHEET = 'style_sheet_filename';
 	public const SUBTITLE = 'subtitle';
 	public const YEAR = 'year';
 
@@ -64,6 +68,19 @@ class Config {
 			],
 			// Title for the habits table on month overview
 			self::HABITS_TITLE => 'Habits',
+			// Font information array.
+			self::FONT_DATA => [
+				'lato' => [
+					'R' => 'Lato/Lato-Regular.ttf',
+					'I' => 'Lato/Lato-Italic.ttf',
+					'B' => 'Lato/Lato-Bold.ttf',
+					'BI' => 'Lato/Lato-BoldItalic.ttf',
+				],
+			],
+			// The font to use. Match the name used in FONT_DATA.
+			self::FONT_DEFAULT => 'lato',
+			// Directory the font is located in.
+			self::FONT_DIR => '/fonts/',
 			// This is the exact size (in mm) of the ReMarkable 2 screen
 			// You might want to adjust it to your device's size
 			// See https://mpdf.github.io/reference/mpdf-functions/construct.html for possible values
@@ -99,6 +116,8 @@ class Config {
 				// '01-01' => "New Year!",
 				// '01-04' => "April Fools' Day",
 			],
+			// Stylesheet filename
+			self::STYLE_SHEET => 'style.css',
 			// Used on the title page of the calendar
 			self::SUBTITLE => 'ReCalendar',
 			// The year for which to generate this calendar.
