@@ -27,10 +27,18 @@ Don't want to/need to/can customize it? Check out the [ready-to-use blank versio
 
 ## Quickstart with Docker
 
-Put your custom `local.config.php` (if needed) in the root directory, and run:
+You can generate your image with:
 
 ```
-  docker build --file Dockerfile . --output .
+  docker build . -t recalendar
+```
+
+This will build and tag a new image in your local registry with all the ne
+
+Now, put your custom `local.config.php` (if needed) in any directory, and run:
+
+```
+  docker run -v -v $PWD:/usr/src/recalendar/ recalendar 
 ```
 
 First run will be slow because it must compile & install `composer`, but next calls will be faster.

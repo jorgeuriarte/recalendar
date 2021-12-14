@@ -10,7 +10,5 @@ COPY . /usr/src/recalendar
 WORKDIR /usr/src/recalendar
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN composer install
-RUN php ./generate.php
 
-FROM scratch AS export-stage
-COPY --from=recalendar /usr/src/recalendar/ReCalendar.pdf .
+CMD ["php", "./generate.php"]
